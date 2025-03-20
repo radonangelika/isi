@@ -64,7 +64,7 @@ Hint: skorzystaj z modułów string i random.
 **Zrzut ekranu:**
 ![task-6](./screenshots/task-06.png)
 
-## task-06
+## task-07
 
 ## Opis
 
@@ -82,3 +82,34 @@ Następnie należy utworzyć plik skrypt7-nr_albumu.py i zaimportować w nim ww.
 
 **Zrzut ekranu:**
 ![task-7](./screenshots/task-07.png)
+
+## task-08
+
+**Treść zadania:**
+Napisz program, który generuje losowy ciąg znaków o długości 100, a następnie utwórz słownik którego kluczami będą unikalne znaki występujące w ciągu, a wartościami liczba ich wystąpień w ciągu znakowym. Utwórz listę, której każdy element to krotka (tupla), zawierająca kolejny klucz z ww. słownika i odpowiadającą mu wartość liczbową.
+Hint: skorzystaj z modułu collections i klasy Counter().
+
+**Plik z rozwiązaniem:** [task-08.py](./task-08.py)
+
+**Zrzut ekranu:**
+![task-8](./screenshots/task-08.png)
+
+## task-09
+
+**Treść zadania:**
+Stwórz klasy Vehicle i Car z polami nazwa, rok_produkcji i przebieg oraz metodami is_old() i is_long_mileage(). Stwórz po jednym obiekcie dla każdej z klas oraz trzeci obiekt, gdzie klasa Car dziedziczy z klasy Vehicle. Dla każdego z obiektów wywołaj obie metody, co najmniej raz użyj dekoratora @property w każdym z trzech przypadków.
+
+**Plik z rozwiązaniem:** [task-09.py](./task-09.py)
+
+**Zrzut ekranu:**
+![task-9](./screenshots/task-09.png)
+
+## task-10
+
+**Treść zadania:**
+Napisz program, który korzystająć z metody chr() wygeneruje łańcuch znakowy z alfabetem, czyli 'abc....xyz'. Do pliku alfabet1-numeralbumu.txt zapisz wygenerowany łańcuch znakowy, a do pliku alfabet2-numeralbumu.txt zapisz litery z ww. łańcucha znakowego, tylko że każda litera ma się znaleźć w osobnej linii w pliku.
+Hint: oprócz funkcji write() skorzystaj również z menadżera kontekstu with, żeby nie zapomnieć o zamknięciu pliku.
+**Plik z rozwiązaniem:** [task-10.py](./task-10.py)
+
+**Zrzut ekranu:**
+![task-10](./screenshots/task-10.png)
