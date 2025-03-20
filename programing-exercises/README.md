@@ -40,3 +40,45 @@ Hint: skorzystaj z funkcji split().
 
 **Zrzut ekranu:**
 ![task-4](./screenshots/task-04.png)
+
+## task-05
+
+**Treść zadania:**
+Napisz program (na dwa sposoby), który szuka pierwiastków liczb od 1 do 256 (włącznie) podzielnych bez reszty przez 2.
+Hint: skorzystaj z modułu math i z tzw. 'list comprehensions'.
+
+**Plik z rozwiązaniem:** [task-05.py](./task-05.py)
+
+**Zrzut ekranu:**
+![task-5](./screenshots/task-05.png)
+
+## task-06
+
+**Treść zadania:**
+Napisz program, który tworzy słownik o nazwie zawierającej Twój numer albumu.
+Kluczami powinny być liczby od 10 do 20, a wartościami pseudolosowe łańcuch znaków o długości 8.
+Hint: skorzystaj z modułów string i random.
+
+**Plik z rozwiązaniem:** [task-06.py](./task-06.py)
+
+**Zrzut ekranu:**
+![task-6](./screenshots/task-06.png)
+
+## task-06
+
+## Opis
+
+- Plik `utils/obliczenia.py` zawiera cztery funkcje matematyczne
+  - `pierwiastek(x)` 
+  - `potega(x, y)`
+  - `logarytm(x, podstawa=math.e)`
+  - `silnia(x)` 
+
+**Treść zadania:**
+Stwórz folder utils, a w nim plik 'obliczenia.py', w którym należy zaimplementować cztery wybrane funkcje matematyczne z modułu math.
+Następnie należy utworzyć plik skrypt7-nr_albumu.py i zaimportować w nim ww. funkcje do obliczeń na przykładowych wartościach.
+
+**Plik z rozwiązaniem:** [skrypt7_25084.py](./skrypt7_25084.py) [obliczenia.py](./utils/obliczenia.py)
+
+**Zrzut ekranu:**
+![task-7](./screenshots/task-07.png)
