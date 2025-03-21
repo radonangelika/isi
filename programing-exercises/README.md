@@ -113,3 +113,32 @@ Hint: oprócz funkcji write() skorzystaj również z menadżera kontekstu with, 
 
 **Zrzut ekranu:**
 ![task-10](./screenshots/task-10.png)
+
+## task-11
+
+**Treść zadania:**
+Odwrócić sentencję podaną przez użytkownika.
+
+**Plik z rozwiązaniem:** [task-11.py](./task-11.py)
+
+**Zrzut ekranu:**
+![task-11](./screenshots/task-11.png)
+
+## task-12
+
+**Treść zadania:**
+Zamienić wszystkie litery o na 0, e na 3, i na 1, a na 4 w podanej przez użytkownika sentencji.
+
+**Plik z rozwiązaniem:** [task-12.py](./task-12.py)
+
+**Zrzut ekranu:**
+![task-12](./screenshots/task-12.png)
+
+## task-13
+
+**Treść zadania:**
+Używając pętli wyświetl liczby w przedziale od 1 do 50 oprócz liczb podzielnych przez 3.
+**Plik z rozwiązaniem:** [task-13.py](./task-13.py)
+
+**Zrzut ekranu:**
+![task-13](./screenshots/task-13.png)
