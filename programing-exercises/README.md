@@ -188,7 +188,7 @@ Stwórz klasę o nazwie Dog, która będzie posiadała zmienne takie jak: name, 
 **Treść zadania:**  
 Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawanie, odejmowanie, dzielenie, mnożenie oraz modulo. W pliku main.py zaimportować plik funkcje.py i wykorzystać zaimportowane funkcje na przykładowych wartościach.
 
-**Plik z rozwiązaniem:** [task-18.py](./funkcje.py)(./main.py)
+**Plik z rozwiązaniem:** [funkcje.py](./funkcje.py)[main.py](./main.py)
 
 **Zrzut ekranu:**
 ![task-18](./screenshots/task-18.png)
