@@ -193,3 +193,84 @@ Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawani
 **Zrzut ekranu:**
 ![task-18](./screenshots/task-18.png)
 
+## task-19
+
+**Treść zadania:**  
+Sprawdź czy wyraz bądź zdanie podane przez użytkownika jest palindromem.
+
+**Plik z rozwiązaniem:** [task-19.py](./task-19.py)
+
+**Zrzut ekranu:**
+![task-19](./screenshots/task-19.png)
+
+## task-20
+
+**Treść zadania:**  
+Prosta gra, program generuje losową liczbę od 1 do 100, użytkownik ma odgadnąć liczbę, jeżeli nie trafi ma zostać wyświetlona podpowiedź czy za duża czy za mała liczba.
+
+**Plik z rozwiązaniem:** [task-20.py](./task-20.py)
+
+**Zrzut ekranu:**
+![task-20](./screenshots/task-20.png)
+
+
+## task-21
+
+**Treść zadania:**  
+Dziedziczenie klas. Klasa Animal ma zawierać atrybuty takie jak name, age, sex oraz metodę sound(). Klasy Dog, Cat oraz Fox dziedziczą po klasie Animal oraz nadpisują funkcje sound() odpowiednimi dźwiękami, dodatkowo klasy Dog oraz Cat posiadają atrybut breed.
+
+**Plik z rozwiązaniem:** [task-21.py](./task-21.py)
+
+**Zrzut ekranu:**
+![task-21](./screenshots/task-21.png)
+
+## task-22
+
+**Treść zadania:**  
+Należy wykorzystać plik wordlist_10000.txt i stworzyć funkcję wyszukującą najdłuższy wyraz w tym pliku oraz drugą funkcję, która wyszuka wyrazy o długości 10.
+**Plik z rozwiązaniem:** [task-22.py](./task-22.py)
+
+**Zrzut ekranu:**
+![task-22](./screenshots/task-22.png)
+
+## task-23
+
+**Treść zadania:**  
+Za pomocą pętli stworzyć 1000 losowych 6 znakowych wyrazów [A-Z][a-z][0-9] i zapisać je do pliku passwords.txt.
+
+**Plik z rozwiązaniem:** [task-23.py](./task-23.py)
+
+**Zrzut ekranu:**
+![task-23](./screenshots/task-23.png)
+
+## task-24
+
+**Treść zadania:**  
+Napisać funkcję tworzącą plik pc.csv. Pierwszy wiersz ma zawierać nazwy kolumn: pc_name, ip. Nazwy komputerów mają zaczynać się literą P oraz 4 oktetem adresu ip. Adresy zaczynają się od 172.30.2.1 do 172.30.2.100. Plik csv ma być rozdzielany przecinkami.
+
+**Plik z rozwiązaniem:** [task-24.py](./task-24.py)
+
+**Zrzut ekranu:**
+![task-24](./screenshots/task-24.png)
+
+## task-25
+
+**Treść zadania:**  
+Za pomocą pakietu do web-scrappingu, np.beautifulsoup lub jsoup, zapisać do tablicy wszystkie hiperłącza występujące na wybranej przez siebie stronie.
+
+
+**Plik z rozwiązaniem:** [task-25.py](./task-25.py)
+
+**Zrzut ekranu:**
+![task-25](./screenshots/task-25.png)
+
+## task-26
+
+**Treść zadania:**  
+Za pomocą pakietu do web-scrappingu, np.beautifulsoup lub jsoup, zapisać do tablicy wszystkie hiperłącza występujące na wybranej przez siebie stronie.
+
+
+**Plik z rozwiązaniem:** [task-26.py](./task-26.py)
+
+**Zrzut ekranu:**
+![task-26](./screenshots/task-26.png)
