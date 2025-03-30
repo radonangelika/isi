@@ -142,3 +142,33 @@ Używając pętli wyświetl liczby w przedziale od 1 do 50 oprócz liczb podziel
 
 **Zrzut ekranu:**
 ![task-13](./screenshots/task-13.png)
+
+## task-14
+
+**Treść zadania:**  
+Używając pętli dodaj do wcześniej zadeklarowanej tabeli liczby z przedziału 1-100, które są podzielne przez 3 i 4.
+
+**Plik z rozwiązaniem:** [task-14.py](./task-14.py)
+
+**Zrzut ekranu:**
+![task-14](./screenshots/task-14.png)
+
+## task-15
+
+**Treść zadania:**  
+Używając pętli dodaj do wcześniej zadeklarowanej tabeli liczby z przedziału 1-100, które są podzielne przez 3 lub 5.
+
+**Plik z rozwiązaniem:** [task-15.py](./task-15.py)
+
+**Zrzut ekranu:**
+![task-15](./screenshots/task-15.png)
+
+## task-16
+
+**Treść zadania:**  
+Napisz funkcję `potega()`, która podnosi podaną liczbę do trzeciej potęgi.
+
+**Plik z rozwiązaniem:** [task-16.py](./task-16.py)
+
+**Zrzut ekranu:**
+![task-16](./screenshots/task-16.png)
