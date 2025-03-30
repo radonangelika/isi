@@ -172,3 +172,24 @@ Napisz funkcję `potega()`, która podnosi podaną liczbę do trzeciej potęgi.
 
 **Zrzut ekranu:**
 ![task-16](./screenshots/task-16.png)
+
+## task-17
+
+**Treść zadania:**  
+Stwórz klasę o nazwie Dog, która będzie posiadała zmienne takie jak: name, age, coat_color. Dodatkowo klasa posiada funkcje sound(), po wywołaniu której wypisywany jest tekst: {name} is barking! Stworzyć 3 obiekty klasy Dog.
+
+**Plik z rozwiązaniem:** [task-17.py](./task-17.py)
+
+**Zrzut ekranu:**
+![task-17](./screenshots/task-17.png)
+
+## task-18
+
+**Treść zadania:**  
+Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawanie, odejmowanie, dzielenie, mnożenie oraz modulo. W pliku main.py zaimportować plik funkcje.py i wykorzystać zaimportowane funkcje na przykładowych wartościach.
+
+**Plik z rozwiązaniem:** [task-18.py](./funkcje.py)(./main.py)
+
+**Zrzut ekranu:**
+![task-18](./screenshots/task-18.png)
+
