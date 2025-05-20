@@ -87,8 +87,189 @@ Napisz kolejne zapytanie, które wybiera gatunek (species) i płeć (sex) pingwi
 SELECT species, sex
 FROM penguins
 WHERE body_mass_g < 3000.0;
-);
 ```
 
 **Zrzut ekranu:**
 ![exercise-05](./screenshots/exercise-05.png)
+
+## exercise-06
+**Treść zadania:**  
+Use the not operator to select penguins that are not Gentoos.
+
+Użyj operatora not, aby wybrać pingwiny inne niż Gentoo.
+**Zapytanie SQL:**
+```sql
+
+SELECT * 
+FROM penguins 
+WHERE species != "Gentoo";
+```
+
+**Zrzut ekranu:**
+![exercise-06](./screenshots/exercise-06.png)
+
+## exercise-07
+**Treść zadania:**  
+SQL's or is an inclusive or: it succeeds if either or both conditions are true. SQL does not provide a specific operator for exclusive or, which is true if either but not both conditions are true, but the same effect can be achieved using and, or, and not. Write a query to select penguins that are female or on Torgersen Island but not both.
+
+W SQL operator OR oznacza alternatywę łączną: zwraca wynik, jeśli jedno lub oba warunki są spełnione.
+SQL nie ma operatora dla alternatywy rozłącznej (XOR), która jest prawdziwa, gdy tylko jeden z warunków jest spełniony (ale nie oba).
+Można to jednak osiągnąć, używając AND, OR i NOT.
+Napisz zapytanie, które wybierze pingwiny, które są samicami LUB znajdują się na wyspie Torgersen, ale NIE spełniają obu tych warunków jednocześnie.
+**Zapytanie SQL:**
+```sql
+
+SELECT * 
+FROM penguins 
+WHERE (island="Torgersen" 
+AND sex !="FEMALE") 
+OR (island!="Torgersen" 
+AND sex="FEMALE");
+```
+
+**Zrzut ekranu:**
+![exercise-07](./screenshots/exercise-07.png)
+
+## exercise-08
+**Treść zadania:**  
+Write a single query that calculates and returns:
+A column called what_where that has the species and island of each penguin separated by a single space.
+A column called bill_ratio that has the ratio of bill length to bill depth.
+
+Napisz jedno zapytanie SQL, które oblicza i zwraca:
+Kolumnę o nazwie what_where, która zawiera gatunek i wyspę każdego pingwina, oddzielone pojedynczą spacją.
+Kolumnę o nazwie bill_ratio, która zawiera stosunek długości dzioba do jego głębokości.
+**Zapytanie SQL:**
+```sql
+
+SELECT 
+  species || ' ' || island AS what_where,
+  bill_length_mm / bill_depth_mm AS bill_ratio
+FROM penguins;
+```
+
+**Zrzut ekranu:**
+![exercise-08](./screenshots/exercise-08.png)
+
+## exercise-09
+**Treść zadania:**  
+Use SQLite's .nullvalue command to change the printed representation of null to the string null and then re-run the previous query. When will displaying null as null be easier to understand? When might it be misleading?
+
+
+**Zapytanie SQL:**
+```sql
+
+.nullvalue null
+SELECT species || ' ' || 
+island ,bill_length_mm / bill_depth_mm as bill_ratio 
+FROM penguins;
+```
+
+**Zrzut ekranu:**
+![exercise-09](./screenshots/exercise-09.png)
+
+## exercise-10
+**Treść zadania:**  
+Write a query to find penguins whose body mass is known but whose sex is not.
+
+Napisz zapytanie SQL, które wybiera pingwiny, których masa ciała jest znana, ale płeć jest nieznana (czyli sex IS NULL):
+
+**Zapytanie SQL:**
+```sql
+
+SELECT *
+FROM penguins
+WHERE body_mass_g IS NOT NULL
+  AND sex IS NULL;
+```
+
+**Zrzut ekranu:**
+![exercise-10](./screenshots/exercise-10.png)
+
+## exercise-11
+**Treść zadania:**  
+Write another query to find penguins whose sex is known but whose body mass is not.
+
+Napisz kolejne zapytanie, aby znaleźć pingwiny, których płeć jest znana, ale masa ciała nie jest znana.
+
+**Zapytanie SQL:**
+```sql
+
+SELECT *
+FROM penguins
+WHERE body_mass_g IS NULL
+  AND sex IS NOT NULL;
+```
+
+**Zrzut ekranu:**
+![exercise-11](./screenshots/exercise-11.png)
+
+
+
+## exercise-12
+**Treść zadania:**  
+What is the average body mass of penguins that weight more than 3000.0 grams?
+
+Jaka jest średnia masa ciała pingwinów ważących ponad 3000,0 gramów?
+**Zapytanie SQL:**
+```sql
+
+SELECT AVG(body_mass_g) 
+as average_body_mass
+FROM 
+(SELECT body_mass_g FROM penguins 
+WHERE body_mass_g > 3000);
+```
+
+**Zrzut ekranu:**
+![exercise-12](./screenshots/exercise-12.png)
+
+## exercise-13
+**Treść zadania:**  
+How many different body masses are in the penguins dataset?
+
+Ile różnych mas ciała znajduje się w zbiorze danych dotyczącym pingwinów?
+**Zapytanie SQL:**
+```sql
+
+SELECT COUNT(DISTINCT body_mass_g) AS unique_body_masses
+FROM penguins;
+```
+
+**Zrzut ekranu:**
+![exercise-13](./screenshots/exercise-13.png)
+
+## exercise-14
+**Treść zadania:**  
+Write a query that shows each distinct body mass in the penguin dataset and the number of penguins that weigh that much.
+
+Napisz zapytanie, które wyświetli każdą odrębną masę ciała w zbiorze danych dotyczących pingwinów i liczbę pingwinów, które ważą tyle samo
+**Zapytanie SQL:**
+```sql
+
+SELECT body_mass_g, COUNT(*) AS count
+FROM penguins
+WHERE body_mass_g IS NOT NULL
+GROUP BY body_mass_g
+ORDER BY body_mass_g;
+```
+
+**Zrzut ekranu:**
+![exercise-14](./screenshots/exercise-14.png)
+
+## exercise-14
+**Treść zadania:**  
+Write a query that uses filter to calculate the average body masses of heavy penguins (those over 4500 grams) and light penguins (those under 3500 grams) simultaneously. Is it possible to do this using where instead of filter?
+
+Napisz zapytanie, które używa filtra do obliczenia średniej masy ciała ciężkich pingwinów (tych powyżej 4500 gramów) i lekkich pingwinów (tych poniżej 3500 gramów) jednocześnie. Czy można to zrobić używając where zamiast filtra?
+**Zapytanie SQL:**
+```sql
+
+SELECT 
+  AVG(body_mass_g) FILTER (WHERE body_mass_g > 4500) AS avg_heavy,
+  AVG(body_mass_g) FILTER (WHERE body_mass_g < 3500) AS avg_light
+FROM penguins;
+```
+
+**Zrzut ekranu:**
+![exercise-14](./screenshots/exercise-14.png)
