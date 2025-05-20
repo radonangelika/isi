@@ -257,7 +257,7 @@ ORDER BY body_mass_g;
 **Zrzut ekranu:**
 ![exercise-14](./screenshots/exercise-14.png)
 
-## exercise-14
+## exercise-15
 **Treść zadania:**  
 Write a query that uses filter to calculate the average body masses of heavy penguins (those over 4500 grams) and light penguins (those under 3500 grams) simultaneously. Is it possible to do this using where instead of filter?
 
@@ -266,10 +266,73 @@ Napisz zapytanie, które używa filtra do obliczenia średniej masy ciała cię�
 ```sql
 
 SELECT 
-  AVG(body_mass_g) FILTER (WHERE body_mass_g > 4500) AS avg_heavy,
-  AVG(body_mass_g) FILTER (WHERE body_mass_g < 3500) AS avg_light
+  AVG(CASE WHEN body_mass_g > 4500 THEN body_mass_g ELSE NULL END) AS avg_heavy,
+  AVG(CASE WHEN body_mass_g < 3500 THEN body_mass_g ELSE NULL END) AS avg_light
 FROM penguins;
 ```
 
 **Zrzut ekranu:**
-![exercise-14](./screenshots/exercise-14.png)
+![exercise-15](./screenshots/exercise-15.png)
+
+
+## exercise-16
+**Treść zadania:**  
+Using an in-memory database, define a table called notes with two text columns author and note and then add three or four rows. Use a query to check that the notes have been stored and that you can (for example) select by author name.
+
+Używając bazy danych w pamięci, zdefiniuj tabelę o nazwie notatki z dwiema kolumnami tekstowymi autor i notatka, a następnie dodaj trzy lub cztery wiersze. Użyj zapytania, aby sprawdzić, czy notatki zostały zapisane i czy możesz (na przykład) wybrać według nazwiska autora.
+**Zapytanie SQL:**
+```sql
+
+
+CREATE TABLE notes (
+  author TEXT,
+  note TEXT
+);
+
+INSERT INTO notes (author, note)
+VALUES 
+  ('Ala', 'Kup mleko'),
+  ('Ola', 'Notatka'),
+  ('Jan', '<3');
+
+SELECT * FROM notes;
+
+```
+
+**Zrzut ekranu:**
+![exercise-16](./screenshots/exercise-16.png)
+
+## exercise-17
+**Treść zadania:**  
+What happens if you try to delete rows that don't exist (e.g., all entries in work that refer to juna)?
+
+Co się stanie, jeśli spróbujesz usunąć wiersze, które nie istnieją (np. wszystkie wpisy w pracy odnoszące się do juna)?
+
+
+**Zapytanie SQL:**
+```sql
+
+DELETE FROM work WHERE author = 'Jan';
+
+```
+
+**Zrzut ekranu:**
+![exercise-17](./screenshots/exercise-17.png)
+
+## exercise-18
+**Treść zadania:**  
+Re-create the notes table in an in-memory database and then use SQLite's .output and .dump commands to save the database to a file called notes.sql. Inspect the contents of this file: how has your data been stored?
+
+
+Utwórz ponownie tabelę notatek w bazie danych w pamięci, a następnie użyj poleceń .output i .dump SQLite, aby zapisać bazę danych w pliku o nazwie notes.sql. Sprawdź zawartość tego pliku: w jaki sposób Twoje dane zostały zapisane?
+**Zapytanie SQL:**
+```sql
+
+sqlite> .output notes.sql
+sqlite> .dump
+sqlite> .output stdout
+
+```
+
+**Zrzut ekranu:**
+![exercise-18](./screenshots/exercise-18.png)
