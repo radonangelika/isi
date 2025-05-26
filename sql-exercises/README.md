@@ -92,3 +92,66 @@ WHERE body_mass_g < 3000.0;
 
 **Zrzut ekranu:**
 ![exercise-05](./screenshots/exercise-05.png)
+
+
+## exercise-06
+**Treść zadania:**  
+Use the not operator to select penguins that are not Gentoos.
+
+Użyj operatora NOT, aby wybrać pingwiny, które nie są gatunku Gentoo.
+
+**Zapytanie SQL:**
+```sql
+
+SELECT *
+FROM penguins
+WHERE NOT species = 'Gentoo';
+```
+
+**Zrzut ekranu:**
+![exercise-06](./screenshots/exercise-06.png)
+
+## exercise-07
+**Treść zadania:**  
+SQL's or is an inclusive or: it succeeds if either or both conditions are true. SQL does not provide a specific operator for exclusive or, which is true if either but not both conditions are true, but the same effect can be achieved using and, or, and not. Write a query to select penguins that are female or on Torgersen Island but not both.
+
+Napisz zapytanie, które wybiera pingwiny, które są: samice (sex = 'FEMALE') lub znajdują się na wyspie Torgersen (island = 'Torgersen') ale nie oba warunki jednocześnie (czyli wyłączna alternatywa, tzw. XOR).
+
+**Zapytanie SQL:**
+```sql
+
+SELECT *
+FROM penguins
+WHERE (sex = 'FEMALE' OR island = 'Torgersen')
+  AND NOT (sex = 'FEMALE' AND island = 'Torgersen');
+```
+
+**Zrzut ekranu:**
+![exercise-07](./screenshots/exercise-07.png)
+
+## exercise-08
+**Treść zadania:**  
+Write a single query that calculates and returns:
+
+A column called what_where that has the species and island of each penguin separated by a single space.
+A column called bill_ratio that has the ratio of bill length to bill depth.
+You can use the || operator to concatenate text to solve part 1, or look at 
+
+
+Napisz jedno zapytanie, które zwraca:
+
+Kolumnę what_where, zawierającą gatunek (species) i wyspę (island) każdego pingwina, połączone pojedynczą spacją.
+
+Kolumnę bill_ratio, zawierającą stosunek długości dzioba (bill_length_mm) do jego głębokości (bill_depth_mm).
+
+**Zapytanie SQL:**
+```sql
+SELECT 
+    species || ' ' || island AS what_where,
+    bill_length_mm / bill_depth_mm AS bill_ratio
+FROM 
+    penguins;
+```
+
+**Zrzut ekranu:**
+![exercise-08](./screenshots/exercise-08.png)
