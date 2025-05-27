@@ -312,7 +312,7 @@ Co się stanie, jeśli spróbujesz usunąć wiersze, które nie istnieją (np. w
 **Zapytanie SQL:**
 ```sql
 
-DELETE FROM work WHERE author = 'Jan';
+DELETE FROM notes WHERE author = 'juna';
 
 ```
 
@@ -336,3 +336,85 @@ sqlite> .output stdout
 
 **Zrzut ekranu:**
 ![exercise-18](./screenshots/exercise-18.png)
+
+## exercise-19
+**Treść zadania:**  
+Start a fresh SQLite session and load notes.sql using the .read command. Inspect the database using .schema and select *: is everything as you expected?
+
+Rozpocznij nową sesję SQLite i załaduj notes.sql za pomocą polecenia .read. Przejrzyj bazę danych za pomocą .schema i wybierz *: czy wszystko jest takie, jak oczekiwałeś?
+**Zapytanie SQL:**
+```sql
+
+sqlite> .read notes.sql
+sqlite> SELECT * FROM notes
+
+```
+
+**Zrzut ekranu:**
+![exercise-19](./screenshots/exercise-19.png)
+
+## exercise-20
+**Treść zadania:**  
+Re-create the notes table in an in-memory database once again and use SQLite's .backup command to save it to a file called notes.db. Inspect this file using od -c notes.db or a text editor that can handle binary data: how has your data been stored?
+
+Utwórz ponownie tabelę notatek w bazie danych w pamięci i użyj polecenia .backup programu SQLite, aby zapisać ją w pliku o nazwie notes.db. Sprawdź ten plik za pomocą polecenia od -c notes.db lub edytora tekstu obsługującego dane binarne: w jaki sposób Twoje dane zostały zapisane?
+**Zapytanie SQL:**
+```sql
+
+sqlite> .backup notes.db
+
+```
+
+**Zrzut ekranu:**
+![exercise-20](./screenshots/exercise-20.png)
+
+## exercise-21
+**Treść zadania:**  
+Start a fresh SQLite session and load notes.db using the .restore command. Inspect the database using .schema and select *: is everything as you expected?
+
+Rozpocznij nową sesję SQLite i załaduj notes.db za pomocą polecenia .restore. Przejrzyj bazę danych za pomocą .schema i wybierz *: czy wszystko jest takie, jak oczekiwałeś?
+**Zapytanie SQL:**
+```sql
+
+.restore notes.db
+
+```
+
+**Zrzut ekranu:**
+![exercise-21](./screenshots/exercise-21.png)
+
+## exercise-22
+**Treść zadania:**  
+Re-run the query shown above using where job = name instead of the full table.name notation. Is the shortened form easier or harder to read and more or less likely to cause errors?
+
+Uruchom ponownie zapytanie pokazane powyżej, używając where job = name zamiast pełnej notacji table.name. Czy skrócona forma jest łatwiejsza czy trudniejsza do odczytania i bardziej lub mniej prawdopodobne, że spowoduje błędy?
+
+**Zapytanie SQL:**
+```sql
+
+select *
+from work, job
+where work.job = job.name
+
+```
+
+**Zrzut ekranu:**
+![exercise-22](./screenshots/exercise-22.png)
+
+## exercise-23
+**Treść zadania:**  
+Find the least time each person spent on any job. Your output should show that mik and po each spent 0.5 hours on some job. Can you find a way to show the name of the job as well using the SQL you have seen so far?
+
+Znajdź najkrótszy czas, jaki każda osoba spędziła na dowolnym zadaniu. Twój wynik powinien pokazywać, że mik i po spędzili po 0,5 godziny na jakimś zadaniu. Czy możesz znaleźć sposób, aby pokazać nazwę zadania, używając do tej pory SQL, który widziałeś?
+
+**Zapytanie SQL:**
+```sql
+
+select work.person, MIN(job.billable), job.name
+from work join job on work.job = job.name
+group by work.person
+
+```
+
+**Zrzut ekranu:**
+![exercise-23](./screenshots/exercise-23.png)
