@@ -6,7 +6,7 @@ Program sprawdza, czy wczytany pojedynczy znak jest cyfrą. Jeśli wczytamy wię
 **Plik z rozwiązaniem:** [skrypt01-25084.py](./skrypt01-25084.py)
 
 **Zrzut ekranu:**
-![task-1](./screenshots/task-1.png)
+![task-01](./screenshots/task-01.png)
 
 ## task-02
 
